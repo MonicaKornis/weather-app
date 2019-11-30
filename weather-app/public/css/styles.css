@@ -24,6 +24,10 @@ body{
   margin-left: 10px;
 }
 
+a:hover {
+  color: #444444;
+}
+
 h1 {
     font-size: 64px;
     margin-bottom: 16px;
