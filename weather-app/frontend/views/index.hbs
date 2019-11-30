@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/styles.css"></link>
+      <script type="text/javascript" src='/js/script.js' defer></script>
+  </head>
+  <body>
+    {{> header}}
+    <main>
+      <h1>{{title}}</h1>
+      <img src="https://thehappypuppysite.com/wp-content/uploads/2018/05/shiba-inu-header.jpg" alt="/images/shiba.jpeg">
+      <p id='place'></p>
+      <p id='forcast'></p>
+      <form>
+        <input placeholder='Enter a postal code or city here'>
+        <button>Check  Weather</button>
+      </form>
+    </main>
+  </body>
+  <p>By {{author}}</p>
+
+  {{> footer}}
+
+</html>
