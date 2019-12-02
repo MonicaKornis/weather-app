@@ -1,23 +1,26 @@
 {
-  "name": "notes-app",
+  "name": "weather-app",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node lib/app.js",
     "build": "babel src -d lib"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "validator": "^11.1.0",
-    "yargs": "^14.0.0"
+    "express": "^4.17.1",
+    "hbs": "^4.0.6",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.6.2",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "chalk": "^2.4.2"
+    "chalk": "^2.4.2",
+    "nodemon": "^1.19.4"
   }
 }

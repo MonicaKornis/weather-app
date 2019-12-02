@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
 
   let value = input.value;
 
-  fetch(`http://localhost:3000/weather?address=${value}`).then((weatherData) => {
+  fetch(`/weather?address=${value}`).then((weatherData) => {
       if(value === undefined || value === '' || value.length > 5) {
         place.innerText = '';
         forcast.innerText = 'Cannot get data for location';
