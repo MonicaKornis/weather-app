@@ -21,6 +21,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
+var port = process.env.PORT || 3000;
 
 var publicDirectoryPath = _path2.default.join(__dirname, '../public');
 var viewsPath = _path2.default.join(__dirname, '../frontend/views');
@@ -163,6 +164,6 @@ app.get('*', function (req, res) {
 //if none match this will be executed. the star is a wild card character
 
 
-app.listen(3000, function () {
-  return console.log('Server is listening on port 3000');
+app.listen(port, function () {
+  return console.log('Server is listening on port ' + port);
 });
