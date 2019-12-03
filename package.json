@@ -5,7 +5,6 @@
   "main": "app.js",
   "scripts": {
     "start": "node lib/app.js",
-    "build": "babel src -d lib"
   },
   "keywords": [],
   "author": "",
