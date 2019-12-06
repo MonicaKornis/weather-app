@@ -25,7 +25,7 @@ export const geoCode = (location,callback) => {
 
 export const getWeather = (longitude,latitude, location, callback) => {
 
-   let url = `https://api.darksky.net/forecast/aa0c94b5fe3d0fa4e730bd4660c72e93/${longitude},${latitude}?units=si`;
+   let url = `https://api.darksky.net/forecast/aa0c94b5fe3d0fa4e730bd4660c72e93/${longitude},${latitude}`;
 
    request({url, json: true},(error, response, {error:bodyError, daily, currently}) => {
      if(error) {
@@ -33,7 +33,8 @@ export const getWeather = (longitude,latitude, location, callback) => {
      } else if (bodyError) {
        callback('Cannot find data for specified location', undefined);
      } else {
-       callback(undefined, { forcast: `${daily.summary} It is currently ${currently.temperature} degrees out with a ${currently.precipProbability}% chance of rain`, location: location});
+       console.log(daily);
+       callback(undefined, { forcast: `${daily.summary} It is currently ${currently.temperature} degrees out with a ${currently.precipProbability}% chance of rain`, location: location, temperatureMin: daily.temperatureMin, temperatureMax: daily.temperatureMax});
      }
    });
 };

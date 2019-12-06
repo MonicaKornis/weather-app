@@ -1,6 +1,4 @@
 let h1 = document.querySelector("h1");
-console.log('hi');
-
 
 let colors  = ['blue','red','green', 'orange','yellow', 'pink', 'red', 'black'];
 function randomIndex() {
@@ -14,7 +12,8 @@ h1.addEventListener('click',randomIndex);
 let form = document.querySelector('form');
 let input = document.querySelector('input');
 let place = document.getElementById('place');
-let forcast = document.getElementById('forcast');
+let forcastParagraph = document.getElementById('forcast');
+let currentData = document.getElementById('currentData');
 
 
 
@@ -28,14 +27,16 @@ form.addEventListener('submit', (e) => {
   fetch(`/weather?address=${value}`).then((weatherData) => {
       if(value === undefined || value === '' || value.length > 5) {
         place.innerText = '';
-        forcast.innerText = 'Cannot get data for location';
+        forcastParagraph.innerText = 'Cannot get data for location';
       }
 
-      weatherData.json().then((jsonData) => {
-
-        if(jsonData.location !== undefined && jsonData.forcast !== undefined){
-          place.innerText = jsonData.location;
-          forcast.innerText = jsonData.forcast;
+      weatherData.json().then(({ location, forcast, temperatureMax, temperatureMin}) => {
+        console.log(temperatureMin);
+        console.log(location);
+        if(location !== undefined && forcast !== undefined){
+          place.innerText = location;
+          forcast.innerText = forcast;
+          currentData.innerText = `Today had a high of ${temperatureMax} and a low of ${temperatureMin}`;
         }
       }
     );

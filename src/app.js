@@ -69,11 +69,11 @@ app.get('/weather', (req,res) => {
     });
   } else {
 
-    let sendData = (err, data) => {
+    let sendData = (err, {forcast, address, location, temperatureMax, temperatureMin}) => {
       if(err) {
         res.send(err);
       } else {
-        res.send({ title: 'Weather', forcast: data.forcast, address: req.query.address, location: data.location});
+        res.send({ title: 'Weather', forcast: forcast, address: req.query.address, location: location, temperatureMin: temperatureMin, temperatureMax: temperatureMax});
       }
     };
                                           //if  we dont default we might  recieve the cannot get logitude of  undefined error
