@@ -30,13 +30,14 @@ form.addEventListener('submit', (e) => {
         forcastParagraph.innerText = 'Cannot get data for location';
       }
 
-      weatherData.json().then(({ location, forcast, temperatureMax, temperatureMin}) => {
-        console.log(temperatureMin);
-        console.log(location);
-        if(location !== undefined && forcast !== undefined){
-          place.innerText = location;
-          forcast.innerText = forcast;
-          currentData.innerText = `Today had a high of ${temperatureMax} and a low of ${temperatureMin}`;
+      weatherData.json().then((data) => {
+        console.log(data.location);
+        console.log(data.forcast);
+        
+        if(data.location !== undefined && data.forcast !== undefined){
+          place.innerText = data.location;
+          forcastParagraph.innerText = data.forcast;
+          currentData.innerText = `Today had a high of ${data.temperatureMax} and a low of ${data.temperatureMin}`;
         }
       }
     );

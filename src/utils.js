@@ -34,7 +34,7 @@ export const getWeather = (longitude,latitude, location, callback) => {
        callback('Cannot find data for specified location', undefined);
      } else {
        console.log(daily);
-       callback(undefined, { forcast: `${daily.summary} It is currently ${currently.temperature} degrees out with a ${currently.precipProbability}% chance of rain`, location: location, temperatureMin: daily.temperatureMin, temperatureMax: daily.temperatureMax});
+       callback(undefined, { forcast: `${daily.summary} It is currently ${currently.temperature} degrees out with a ${currently.precipProbability}% chance of rain`, location: location, temperatureMin: daily.data[0].temperatureMin, temperatureMax: daily.data[0].temperatureMax});
      }
    });
 };
