@@ -31,9 +31,7 @@ form.addEventListener('submit', (e) => {
       }
 
       weatherData.json().then((data) => {
-        console.log(data.location);
-        console.log(data.forcast);
-        
+
         if(data.location !== undefined && data.forcast !== undefined){
           place.innerText = data.location;
           forcastParagraph.innerText = data.forcast;
