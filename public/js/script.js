@@ -18,9 +18,9 @@ let currentData = document.getElementById('currentData');
 
 
 form.addEventListener('submit', (e) => {
-  console.log(form);
+
   e.preventDefault();
-  console.log(e);
+
 
   let value = input.value;
 
