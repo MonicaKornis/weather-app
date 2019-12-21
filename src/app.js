@@ -73,7 +73,6 @@ app.get('/weather', (req,res) => {
       if(err) {
         res.send(err);
       } else {
-        console.log(data);
         res.send({ title: 'Weather', forcast: data.forcast, address: req.query.address, location: data.location, temperatureMin: data.temperatureMin, temperatureMax: data.temperatureMax});
       }
     };
