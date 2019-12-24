@@ -95,14 +95,7 @@ app.get('/weather', (req,res) => {
   let geoData  = Utils.geoCode(req.query.address, getWeatherDataFromCoords);
 }
 
-  // res.render('weather', {
-  //   title: 'Current Weather',
-  //   author: 'Monica',
-  //   forcast: 'Today the high is 43 degrees with a low of 32. Right now the temperature is 35.',
-  //   location: 'New York, NY'
-  // });
 
-  //we're using response.render to  render a template
 });
 
 app.get('/help/*', (req,res) => {
