@@ -18,7 +18,7 @@ hbs.registerPartials(partialsPath);
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-// const app = express();
+
 //
 // // const currentDirectory = __dirname; //path to current directory
 // // const filePath = __filename; //path to file
