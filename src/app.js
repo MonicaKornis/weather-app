@@ -2,6 +2,8 @@ import express from 'express';
 import path from 'path';
 import hbs from 'hbs';
 import * as Utils from './utils';
+import models from './models';
+import sequelize from 'Sequelize';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -133,5 +135,6 @@ app.get('*', (req, res) => {
 }); //this needs to come last - bc matches are looked for in order - it will look for all of the routes in order
 //if none match this will be executed. the star is a wild card character
 
-
-app.listen(port, () => console.log('Server is listening on port ' + port));
+models.sequelize.sync().then(x => {
+  app.listen(port, () => console.log('Server is listening on port ' + port));
+});
