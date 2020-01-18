@@ -68,3 +68,39 @@ h1 {
 img {
   width: 60vh;
 }
+
+a#login-button {
+  background-color: #3c4146;
+  color: #EEF4EC;
+  padding: 1em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -1em;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 150px;
+  text-align: center;
+}
+
+#nav-bar {
+  display: flex;
+  position: static;
+  height: 10vh;
+  flex-direction: row;
+}
+
+#navbar-cloud {
+  width: 5vh;
+  margin-left: 1vh;
+}
+
+#main-page-body {
+  background-color: #ffd300;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+}
