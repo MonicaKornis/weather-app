@@ -72,17 +72,14 @@ img {
 a#login-button {
   background-color: #3c4146;
   color: #EEF4EC;
-  padding: 1em;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -100px;
-  margin-top: -1em;
+  padding: 3vh;
+  position: absolute;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   width: 50vh;
   text-align: center;
-  margin-top: 180px;
+  bottom: 12%;
+  border-radius: 4px;
 }
 
 #nav-bar {
@@ -110,10 +107,13 @@ a#login-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
 #main-cloud {
   width: 80vh;
-  margin-bottom: 20px;
-  margin-left: auto;
+  margin-bottom: 10px;
+  margin: 0px;
+  padding: 0px;
 }
