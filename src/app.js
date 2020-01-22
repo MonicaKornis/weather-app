@@ -21,31 +21,12 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath));
 
 
-//
-// // const currentDirectory = __dirname; //path to current directory
-// // const filePath = __filename; //path to file
-//
-// const finalPath = path.join(__dirname, '../public'); //path to directory combined  with the relative path to frontend
-// const partialsPath = path.join(__dirname, '../frontend/partials');
-// const viewPath = path.join(__dirname, '../frontend/views');
-//
-// console.log(finalPath);
-//
-// //setup handlebars engine and views location
-// app.set('view engine', 'hbs');
-// app.use(express.static(finalPath));
-// app.set('views', viewPath); //setting views to the path to the frontend directory
-// hbs.registerPartials(partialsPath); //a quick way to load all partials from a particular directory
 
-//setup static directory to serve
-// app.use(express.static(finalPath)); //app.use is a way to customize your server
-
-//callback has request object sent in and response
 app.get('/', (req,res) => {
   res.render('index', {
     title: 'Weather',
     author: 'Monica'
-  }); //sends something back to the requestor
+  });
 });
 
 app.get('/help', (req,res) => {
@@ -113,20 +94,6 @@ app.get('/about/*', (req,res) => {
     author: 'Monica'
   });
 });
-
-app.get('/products', (req,res) =>  {
-  if(!req.query.search) {
-    return res.send( { error: 'must provide search term'});
-    //we need  the return because otherwise we would be sending two responses - and we can only send  one response back
-  }
-
-  console.log(req.query.search);
-
-  res.send({
-    products: []
-  });
-});
-
 
 app.get('*', (req, res) => {
   res.render('404', {
