@@ -20,28 +20,25 @@ hbs.registerPartials(partialsPath);
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-
-
 app.get('/', (req,res) => {
   res.render('index', {
     title: 'Weather',
-    author: 'Monica'
+    author: 'Shiba Inu Incorporated'
   });
 });
 
 app.get('/help', (req,res) => {
   res.render('help', {
     title: 'Help',
-    author: 'Monica',
+    author: 'Shiba Inu Incorporated',
     helpText: 'Frequent Questions'
   }); //sends something back to the requestor
 });
 
 app.get('/about', (req,res) => {
-  // res.send('<h1>HELLO - It is me</h1>'); //sends something back to the requestor
   res.render('about', {
     title: 'About',
-    author: 'Monica'
+    author: 'Shiba Inu Incorporated'
   });
 });
 
@@ -84,20 +81,20 @@ app.get('/weather', (req,res) => {
 app.get('/help/*', (req,res) => {
   res.render('404', {
     title: 'help',
-    author: 'Monica'
+    author: 'Shiba Inu Incorporated'
   });
 });
 
 app.get('/about/*', (req,res) => {
   res.render('404', {
     title: 'about',
-    author: 'Monica'
+    author: 'Shiba Inu Incorporated'
   });
 });
 
 app.get('*', (req, res) => {
   res.render('404', {
-    author: 'Monica'
+    author: 'Shiba Inu Incorporated'
   });
 }); //this needs to come last - bc matches are looked for in order - it will look for all of the routes in order
 //if none match this will be executed. the star is a wild card character
